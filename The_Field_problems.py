@@ -2,11 +2,9 @@
 # Please fill out this stencil and submit using the provided submission script.
 
 
-
-
-
 ## 1: (Problem 1.7.1) Python Comprehensions: Filtering
 def myFilter(L, num):
+    return [x for x in L if x%num > 0]
     '''
     Input:
       -L: a list of numbers
@@ -26,6 +24,7 @@ def myFilter(L, num):
 ## 2: (Problem 1.7.2) Python Comprehensions: Lists of Lists
 
 def my_lists(L):
+    return [[x for x in L]]
     '''
     >>> my_lists([1,2,4])
     [[1], [1, 2], [1, 2, 3, 4]]
@@ -38,6 +37,7 @@ def my_lists(L):
 
 ## 3: (Problem 1.7.3) Python Comprehensions: Function Composition
 def myFunctionComposition(f, g):
+    {x:g[f[x]] for x in f.keys()}
     '''
     Input:
       -f: a function represented as a dictionary such that g of f exists
@@ -61,6 +61,7 @@ def myFunctionComposition(f, g):
 
 ## 4: (Problem 1.7.4) Summing numbers in a list
 def mySum(L):
+    return 
     '''
     Input:
       a list L of numbers

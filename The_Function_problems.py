@@ -7,6 +7,7 @@
 
 ## 1: (Problem 0.8.3) Tuple Sum
 def tuple_sum(A, B):
+    return [(A[i][0] + B[i][0], A[i][1] + B[i][1]) for i in range(len(A))]
     '''
     Input:
       -A: a list of tuples
@@ -27,6 +28,7 @@ def tuple_sum(A, B):
 
 ## 2: (Problem 0.8.4) Inverse Dictionary
 def inv_dict(d):
+    return {y:x for(x,y) in d.items()}
     '''
     Input:
       -d: dictionary representing an invertible function f
@@ -42,6 +44,7 @@ def inv_dict(d):
 
 ## 3: (Problem 0.8.5) Nested Comprehension
 def row(p, n):
+    return [p+i for i in range(n)]
     '''
     Input:
       -p: a number
@@ -54,19 +57,19 @@ def row(p, n):
     '''
     pass
 
-comprehension_with_row = ...
+comprehension_with_row = [row(i, 20) for i in range(15)]
 
-comprehension_without_row = ...
+comprehension_without_row = [[p+i for i in range(20)] for p in range(15)]
 
 
 
 ## 4: (Problem 0.8.10) Probability Exercise 1
-Pr_f_is_even = ...
-Pr_f_is_odd  = ...
+Pr_f_is_even = .7
+Pr_f_is_odd  = .3
 
 
 
 ## 5: (Problem 0.8.11) Probability Exercise 2
-Pr_g_is_1    = ...
-Pr_g_is_0or2 = ...
+Pr_g_is_1    = .4
+Pr_g_is_0or2 = .3
 
