@@ -2,10 +2,10 @@ from math import pi, e
 
 import numpy as np
 
-from image import color2gray as c
+from Tools.image import color2gray as c
 # from importlib import reload as rl
-from image import file2image as f
-from plotting import plot
+from Tools.image import file2image as f
+from Tools.plotting import plot
 
 # chapter 1: The Field
 # a field is a set of values with plus and times operations

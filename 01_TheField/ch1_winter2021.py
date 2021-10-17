@@ -1,7 +1,7 @@
-from plotting import plot
+from Tools.plotting import plot
 from math import e, pi
-from image import file2image as f2i
-from image import color2gray as cg
+from Tools.image import file2image as f2i
+from Tools.image import color2gray as cg
 
 ##task 1.4.1
 S = {2+2j, 3+2j, 1.75+1j, 2+1j, 2.25+1j, 2.5+1j, 2.75+1j, 3+1j, 3.25+1j}

@@ -1,5 +1,5 @@
 import numpy as np
-from plotting import plot
+from Tools.plotting import plot
 
 '''
 sparse representation is used to omit values of zero and make a vector simpler

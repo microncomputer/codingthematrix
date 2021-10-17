@@ -83,7 +83,7 @@ def image2file(image, path):
         img = image
     with open(path, 'wb') as f:
         png.Writer(width=len(image[0]), height=len(image)).write(f,
-            [_boxed2flat(r) for r in img])
+                                                                 [_boxed2flat(r) for r in img])
 
 ## Display functions
 def image2display(image, browser=None):

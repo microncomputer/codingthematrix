@@ -1,5 +1,5 @@
 from Vec import Vec
-from GF2 import zero, one
+from Tools.GF2 import zero, one
 from random import choice
 
 '''

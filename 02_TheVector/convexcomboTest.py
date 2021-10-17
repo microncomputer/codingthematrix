@@ -1,7 +1,7 @@
 import numpy as np
-from image import file2image as f
-from image import color2gray as c
-from image import image2file as i
+from Tools.image import file2image as f
+from Tools.image import color2gray as c
+from Tools.image import image2file as i
 
 
 # convex combinations of vectors returning n evenly spaced convex combinations between vec1 and vec2
