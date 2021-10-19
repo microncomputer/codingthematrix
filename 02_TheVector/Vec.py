@@ -1,5 +1,7 @@
 class Vec:
     def __init__(self, domain, function):
+        # assert isinstance(domain, set)
+        # assert isinstance(function, set)
         self.D = domain
         self.f = function
 

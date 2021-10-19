@@ -24,7 +24,7 @@ plot({.5*z*1j for z in S})
 plot({.5*z*1j-1j+2 for z in S})
 
 ## task 1.4.10
-data = cg(f2i("img01.png"))
+data = cg(f2i("../Tools/img01.png"))
 pts = [x +y*1j for y in range(len(data)) for x in range(len(data[0])) if data[y][x] < 120]
 
 ## task 1.4.11

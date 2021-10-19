@@ -8,24 +8,31 @@ Given an initial configuration of lights, find a sequence of button-pushes that 
 lights, or report that none exists.
 '''
 
-domain = {(i,j) for j in range(5) for i in range(5)}
+domain = {(i, j) for j in range(5) for i in range(5)}
 # print(sorted(domain))
-f = {d:choice([zero, one]) for d in domain}
+f = {d: choice([zero, one]) for d in domain}
 s = Vec(domain, f)
-print(s.f)
 
-def buttonPushed(button, V):
-    affectedButtons = {button}
-    if(button[0]-1 >= 0):
-        affectedButtons.add((button[0]-1, button[1]))
-    if(button[0]+1 <= 4):
-        affectedButtons.add((button[0]+1, button[1]))
-    if(button[1]-1 >= 0):
-        affectedButtons.add((button[0], button[1]-1))
-    if(button[1]+1 <= 4):
-        affectedButtons.add((button[0], button[1]+1))
 
-    f = {affectedButtons[i]:val for i in range(len(affectedButtons)) for (affectedButtons[i],val) in V.f.items()}
+def buttonPushed(buttonTuple, V):
+    '''
+    affectedButtons = {buttonTuple}
+    if(buttonTuple[0]-1 >= 0):
+        affectedButtons.add((buttonTuple[0] - 1, buttonTuple[1]))
+    if(buttonTuple[0]+1 <= 4):
+        affectedButtons.add((buttonTuple[0] + 1, buttonTuple[1]))
+    if(buttonTuple[1]-1 >= 0):
+        affectedButtons.add((buttonTuple[0], buttonTuple[1] - 1))
+    if(buttonTuple[1]+1 <= 4):
+        affectedButtons.add((buttonTuple[0], buttonTuple[1] + 1))
+    '''
+
+    affectedButtons = {(i, buttonTuple[0]) for i in range(buttonTuple[0] - 1, buttonTuple[0] + 2)}.union({(buttonTuple[1], j) for j in range(buttonTuple[1] - 1, buttonTuple[1] + 2)})
+    f = {button:V[button]+one for button in affectedButtons if button in V.D}
+
     move = Vec(V.D, f)
     return move
 
+
+btest = buttonPushed((0, 0), s)
+print(btest.f)

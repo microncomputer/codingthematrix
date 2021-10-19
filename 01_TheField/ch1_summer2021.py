@@ -109,7 +109,7 @@ srt = {.5 * z * 1j + 2 - 1j for z in s}
 # plot(srt)
 
 # task 1.4.10
-data = c(f("img01.png"))
+data = c(f("../Tools/img01.png"))
 # plotting only pixels in img01 that have intensity < 120
 # In this task, you should assign to pts the list of complex numbers
 # x + iy such that the image intensity of pixel (x, y) is less than 120.
