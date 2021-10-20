@@ -27,8 +27,19 @@ class Vec:
         # this way preserves sparsity:
         return Vec(self.D, {d: alpha * value for d, value in self.f.items()})
 
+    def __mul__(self, other):
+        # scalar multiplication
+        if isinstance(other, int) or isinstance(other, float):
+            return self.scalar_mul(other)
+
+        # dot product
+        if isinstance(other, Vec):
+            assert self.D == other.D
+            return sum([self[d]*other[d] for d in self.D])
+
+
     # Quiz 2.7.4 write procedure to add two Vec's and return the vector sum of the two
-    def add(self, v):
+    def __add__(self, v):
         if self.D != v.D:
             raise ValueError("can't add vectors of different dimensions/domains")
         else:
@@ -42,7 +53,10 @@ class Vec:
 # example usage:
 v = Vec({'A', 'B', 'C'}, {'A': 1, 'B': -4})
 u = Vec({'B', 'A', 'C'}, {'C': 3})
-j = v.add(u)
+j = v+u
 
 n = -v
+t = v*u
 #print(n.f)
+
+
