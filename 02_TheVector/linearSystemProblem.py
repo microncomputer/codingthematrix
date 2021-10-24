@@ -6,12 +6,12 @@ sides)
 """
 
 def linearSystem(vectors, scalars):
-    assert vectors.len == scalars.len
+    assert len(vectors) == len(scalars)
     x = []
     for a in range(len(vectors)):
         for i in range(len(a)):
             x += {("x"+str(i),a[i])}
-
+    return [x for ]
 
 
 def solveForVars(vec, rhs):

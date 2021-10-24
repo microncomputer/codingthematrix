@@ -49,6 +49,14 @@ class Vec:
     def __neg__(self):
         return Vec(self.D, {d: -v for d, v in self.f.items()})
 
+    '''
+    ended up being provided in vecutil.py so I am commenting it out here
+    
+    # Quiz 2.10.1: list2vec for turning list vectors into Vec vectors
+    def list2vec(L):
+        return Vec(set(range(len(L))), {i:L[i] for i in range(len(L))})
+    '''
+
 
 # example usage:
 v = Vec({'A', 'B', 'C'}, {'A': 1, 'B': -4})
