@@ -57,6 +57,26 @@ class Vec:
         return Vec(set(range(len(L))), {i:L[i] for i in range(len(L))})
     '''
 
+    '''
+    backward substitution method for solving upper triangular systems:
+    '''
+
+def triangular_solve_n(rowlist, b):
+    """
+    input: for some integer n, a triangular system consisting of a list rowlist of n-vectors, and
+        a length-n list b of numbers
+
+    output: a vector x such that, for i = 0, 1,...,n − 1, the dot-product of rowlist[i] with xˆ
+        equals b[i]
+    """
+    D = rowlist[0].D
+    n = len(D)
+    assert D == set(range(n))
+    x = rowlist.zero_vec(D)
+    for i in reversed(range(n)):
+        x[i] = (b[i] - rowlist[i] * x)/rowlist[i][i]
+    return x
+
 
 # example usage:
 v = Vec({'A', 'B', 'C'}, {'A': 1, 'B': -4})

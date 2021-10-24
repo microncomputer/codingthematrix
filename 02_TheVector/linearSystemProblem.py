@@ -18,3 +18,6 @@ def solveForVars(vec, rhs):
     x = []
     for i in range(vec):
         x[i] = "  n"
+
+
+
