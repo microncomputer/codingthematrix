@@ -1,4 +1,4 @@
-from Vec import Vec
+from vec_draft import Vec
 from Tools.GF2 import zero, one
 from random import choice
 

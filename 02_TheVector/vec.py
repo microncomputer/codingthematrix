@@ -1,4 +1,5 @@
 # Copyright 2013 Philip N. Klein
+# completed methods by Micron Jenkins 10/25/2021, passes doctest
 
 def getitem(v,k):
     """
@@ -12,7 +13,7 @@ def getitem(v,k):
     0
     """
     assert k in v.D
-    pass
+    return v.f[k] if k in v.f else 0
 
 def setitem(v,k,val):
     """
@@ -32,7 +33,8 @@ def setitem(v,k,val):
     0
     """
     assert k in v.D
-    pass
+    v.f[k] = val
+
 
 def equal(u,v):
     """
@@ -68,12 +70,12 @@ def equal(u,v):
     False
     """
     assert u.D == v.D
-    pass
+    return all(u[d] == v[d] for d in set().union(u.f.keys(), v.f.keys()))
 
 def add(u,v):
     """
     Returns the sum of the two vectors.
-    
+
     Consider using brackets notation u[...] and v[...] in your procedure
     to access entries of the input vectors.  This avoids some sparsity bugs.
 
@@ -105,7 +107,7 @@ def add(u,v):
     True
     """
     assert u.D == v.D
-    pass
+    return Vec(u.D, {d: u[d] + v[d] or 0 for d in set().union(v.f.keys(),u.f.keys())})
 
 def dot(u,v):
     """
@@ -139,7 +141,7 @@ def dot(u,v):
     12
     """
     assert u.D == v.D
-    pass
+    return sum([u[d] * v[d] for d in u.D])
 
 def scalar_mul(v, alpha):
     """
@@ -159,7 +161,8 @@ def scalar_mul(v, alpha):
     >>> u == Vec({'x','y','z','w'},{'x':1,'y':2,'z':3,'w':4})
     True
     """
-    pass
+    return Vec(v.D, {d: alpha * value for d, value in v.f.items()})
+
 
 def neg(v):
     """
@@ -176,7 +179,8 @@ def neg(v):
     >>> -Vec({'a','b','c'}, {'a':1}) == Vec({'a','b','c'}, {'a':-1})
     True
     """
-    pass
+    return Vec(v.D, {d: -val for d, val in v.f.items()})
+
 
 ###############################################################################################################################
 

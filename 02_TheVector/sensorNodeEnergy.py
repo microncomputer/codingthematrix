@@ -1,4 +1,4 @@
-from Vec import Vec
+from vec_draft import Vec
 
 '''
 Example 2.9.7: Sensor node energy utilization: Sensor networks are made up of small, cheap

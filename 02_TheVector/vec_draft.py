@@ -35,8 +35,7 @@ class Vec:
         # dot product
         if isinstance(other, Vec):
             assert self.D == other.D
-            return sum([self[d]*other[d] for d in self.D])
-
+            return sum([self[d] * other[d] for d in self.D])
 
     # Quiz 2.7.4 write procedure to add two Vec's and return the vector sum of the two
     def __add__(self, v):
@@ -61,6 +60,7 @@ class Vec:
     backward substitution method for solving upper triangular systems:
     '''
 
+
 def triangular_solve_n(rowlist, b):
     """
     input: for some integer n, a triangular system consisting of a list rowlist of n-vectors, and
@@ -74,17 +74,15 @@ def triangular_solve_n(rowlist, b):
     assert D == set(range(n))
     x = rowlist.zero_vec(D)
     for i in reversed(range(n)):
-        x[i] = (b[i] - rowlist[i] * x)/rowlist[i][i]
+        x[i] = (b[i] - rowlist[i] * x) / rowlist[i][i]
     return x
 
 
 # example usage:
 v = Vec({'A', 'B', 'C'}, {'A': 1, 'B': -4})
 u = Vec({'B', 'A', 'C'}, {'C': 3})
-j = v+u
+j = v + u
 
 n = -v
-t = v*u
-#print(n.f)
-
-
+t = v * u
+# print(n.f)

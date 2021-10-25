@@ -5,6 +5,7 @@ sides)
 • output: a vector xˆ satisfying the linear system 2.3 or a report that none exists.
 """
 
+'''
 def linearSystem(vectors, scalars):
     assert len(vectors) == len(scalars)
     x = []
@@ -18,6 +19,7 @@ def solveForVars(vec, rhs):
     x = []
     for i in range(vec):
         x[i] = "  n"
+'''
 
 
 
