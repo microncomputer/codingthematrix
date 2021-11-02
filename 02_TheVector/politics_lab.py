@@ -133,8 +133,12 @@ def find_average_similarity(sen, sen_set, voting_dict):
     between sen and everyone in sen_set.
     """
 
-    assert sen not in sen_set
-    return sum([policy_compare(sen, sen2, voting_dict) for sen2 in sen_set]) / len(sen_set)
+    sens = sen_set.copy()
+    sens.discard(sen)
+    return sum([policy_compare(sen, sen2, voting_dict) for sen2 in sens]) / len(sens)
+
+    # alternatively we could use the distributive property and do the sum of all the voting record vectors
+    # in sen_set and multiply that by voting_dict[sen]/len(sen_set)
 
 
 ## 7: (Task 2.12.8) Average Record
@@ -179,7 +183,8 @@ def bitter_rivals(voting_dict):
         >>> br == ('Fox-Epstein', 'Oyakawa') or br == ('Oyakawa', 'Fox-Epstein')
         True
     """
-    return (..., ...)
+    d = {(sen1, least_similar(sen1, voting_dict)): min([policy_compare(sen1, least_similar(sen1, voting_dict), voting_dict)])for sen1 in voting_dict.keys()}
+    return min(d, key=d.get)
 
 
 def main():
@@ -204,7 +209,10 @@ def main():
     # adding new element to vd to be able to use the functionality of the procedures I already wrote
     vd['dem_avg'] = average_Democrat_record
     most_average_Democrat_v2 = most_similar('dem_avg', vd)
+    # it ends up being biden, the same answer found in 2.12.7
 
+    br = bitter_rivals(vd)
+    print(br)
 
 if __name__ == '__main__':
     main()
