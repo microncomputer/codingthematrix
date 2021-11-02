@@ -1,0 +1,47 @@
+2.13 Review Questions
+• What is vector addition?
+    add all corresponding elements of the vectors together and return a single vector, must be same sized vectors
+• What is the geometric interpretation of vector addition?
+    put the vectors head to tail in sequence. the result is the point at the end of the vectors
+• What is scalar-vector multiplication?
+    scalar is a single number. multiply this same number by each element in the vector to receive the scalar product
+• What is the distributive property that involves scalar-vector multiplication but not vector
+addition?
+    (a+b)v = av+bv
+• What is the distributive property that involves both scalar-vector multiplication and vector
+addition?
+    a(v+u) = av+au
+• How is scalar-vector multiplication used to represent the line through the origin and a given
+point?
+    the line through the origin can be represented by all the "points" making up the line. each point is a
+    scalar multiple of the same vector, the "given point"
+    you can think of the line through the origin and a given point v as
+    the set {alpha * v for all alpha in the reals}
+• How are scalar-vector multiplication and vector addition used to represent the line through
+a pair of given points?
+    for points v1 and v2, the line through these points can be expressed as {alpha*(v2-v1) + (v1) for all alpha
+    in the reals} or if it's the line segment between those two points, {alpha*(v2-v1)+v1 for all alpha in
+    the reals where 0<=alpha<=1}
+
+    you can also use a convex combination of the two points and say the line between two points is
+    {alpha*v1 + beta*v2 for all alpha,beta in the reals s.t. alpha,beta >=0 and alpha+beta = 1}
+
+• What is dot-product?
+    sum of the products of each corresponding element in same size vectors
+• What is the homogeneity property that relates dot-product to scalar-vector multiplication?
+    alpha, a scalar and v,u vectors
+    homogeneity property says that alpha(uTv) = (alpha*u)Tv  ((T is another way of saying dot(for dot product))
+• What is the distributive property property that relates dot-product to vector addition?
+    (u+v)Tw = uTw + vTw
+• What is a linear equation (expressed using dot-product)?
+    a linear equation is of the form aTx=beta, where a is a vector, beta is a scalar, and x is a vector variable
+• What is a linear system?
+    a series of linear equations that use the same variables
+    xT(v1+v2+...+vn)=xTv1+xTv2+...+xTvn       (( T is for dot product)
+• What is an upper-triangular linear system?
+    they are easier to solve. each successive vector has one more leading zero element and one less
+    variable element.
+• How can one solve an upper-triangular linear system?
+    get the system in order so the one with least unknowns is on the bottom and and highest unknowns is at the top.
+    solve from bottom to top for each missing variable then plug that into the next equation. in theory, you will
+    only ever be solving for one unknown at each step, making it easy as x+y=c
