@@ -1,6 +1,6 @@
 """
 
->>> from vec_pklein import Vec
+>>> from Tools.vec import Vec
 
 ------- For getitem(v,d):
 
