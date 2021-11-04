@@ -64,6 +64,6 @@ q15 = dot_product_list([1,2,3], [1,2,3,4,5,6])
 print(q15)
 
 # what I am getting out of this is that the needle in the haystack search using dot product
-# only (basicially) works for the audio clips and politician voting records comparisons
+# only (basically) works for the audio clips and politician voting records comparisons
 # because the numbers are oscillating and not ever increasing/decreasing numbers.
 
