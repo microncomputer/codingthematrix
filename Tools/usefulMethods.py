@@ -8,8 +8,8 @@ so they will go here for now
 # for which the sum of the subset is sumVector
 def vector_sum_subset(sumVector, vectorSet):
     # a function used within this function:
-    # sum GF2 vector lists and return true if they equal another vector list
-    def sumGF2vec(sumVec, vectorlist):
+    # sum GF2 vector lists and return true if they equal another vector sumvec
+    def sumvec(sumVec, vectorlist):
         s = [sum(vectorlist[i][j] for i in range(len(vectorlist))) for j in range(len(vectorlist[0]))]
         if s == sumVec:
             return True
@@ -43,5 +43,5 @@ def vector_sum_subset(sumVector, vectorSet):
     powerset = [[vectorSet[k] for k in range(len(vectorSet)) if i & 1 << k] for i in range(2 ** (len(vectorSet)))]
     powerset.remove([])
     # return powerset
-    return [powerset[i] for i in range(len(powerset)) if sumGF2vec(sumVector, powerset[i])]
+    return [powerset[i] for i in range(len(powerset)) if sumvec(sumVector, powerset[i])]
 
