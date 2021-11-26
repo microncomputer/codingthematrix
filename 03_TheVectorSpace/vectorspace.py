@@ -1,3 +1,4 @@
+from Tools.vec import Vec
 """
 using this file to work through things in the chapter, including quizzes and
 examples that I want to mess around with
@@ -18,9 +19,9 @@ def lin_comb(vlist, clist):
     return [sum(clist[i] * vlist[i][j] for i in range(len(clist))) for j in range(len(vlist[0]))]
 
 
-a = [2, 3, 4, 5]
+c = [2, 3, 4, 5]
 v = [[1, 2, 3, 4], [2, 4, 6, 8], [0, 1, 2, 3], [5, 4, 3, 2]]
-b = lin_comb(v, a)
+b = lin_comb(v, c)
 print(b)
 
 '''
@@ -81,3 +82,10 @@ spanvec4 = scalar_vector_mult(1, v1) + scalar_vector_mult(1, v2)
 
 # Quiz 3.2.6: For which 2-vector v over R does Span {v} consists of a finite number of vectors?
 # [0,0] the zero vector
+
+# Quiz 3.2.13: Write a procedure standard(D, one) that, given a domain D and given the
+# number one for the field, returns the list of standard generators for R^D. (The number one is
+# provided as an argument so that the procedure can support use of GF(2).)
+def standard(D, one):
+    return [Vec(D, {k:one}) for k in D]
+

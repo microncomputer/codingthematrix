@@ -93,7 +93,7 @@ def main():
 
     # uncomment to build the sum_set which will do at least 2^25 operations. v slow
     # sum_to_s = vector_sum_subset(s, setofallmoves)
-    print(sum_to_s)
+    # print(sum_to_s)
 
 if __name__ == '__main__':
     main()
